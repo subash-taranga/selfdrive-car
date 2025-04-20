@@ -13,14 +13,14 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='my_python_package',
-            executable='my_node',
-            name='my_node',
+            executable='object_detection',
+            name='object_detection',
             output='screen'
         ),
-        Node(
-            package='robot_state_publisher',
-            executable='robot_state_publisher',
-            output='screen',
-            parameters=[params]
-        ),
+        # Node(
+        #     package='robot_state_publisher',
+        #     executable='robot_state_publisher',
+        #     output='screen',
+        #     parameters=[params]
+        # ),
     ])

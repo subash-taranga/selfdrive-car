@@ -1,6 +1,6 @@
 import torch
 from pathlib import Path
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # Locate files relative to this script
 BASE = Path(__file__).parent.resolve()

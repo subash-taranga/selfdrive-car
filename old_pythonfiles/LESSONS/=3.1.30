@@ -1,0 +1,12 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting gitpython
+  Using cached GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython)
+  Using cached gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython)
+  Using cached smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Using cached GitPython-3.1.44-py3-none-any.whl (207 kB)
+Using cached gitdb-4.0.12-py3-none-any.whl (62 kB)
+Using cached smmap-5.0.2-py3-none-any.whl (24 kB)
+Installing collected packages: smmap, gitdb, gitpython
+Successfully installed gitdb-4.0.12 gitpython-3.1.44 smmap-5.0.2
