@@ -1,4 +1,4 @@
-FROM ros:humble
+FROM ros:jazzy
 
 RUN apt-get update
 

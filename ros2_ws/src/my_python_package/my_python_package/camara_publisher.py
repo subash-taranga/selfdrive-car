@@ -9,21 +9,17 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy
 class ObjectDetection(Node):
 
     def __init__(self):
-        super().__init__('object_detection')
-        topic = "/vel_cmd"
-        self.get_logger().info('object_detection is listening to Topic -> ' + topic)
-        qos_profile = QoSProfile(depth=10, reliability=ReliabilityPolicy.BEST_EFFORT)
-        self.sub = self.create_subscription(String, topic, self.chatter_callback, qos_profile)
-        
+        super().__init__('camara_publisher')
+
         # Create a publisher for the Twist message
-        self.twist_pub = self.create_publisher(String, '/vel_cmd', 10)
+        self.twist_pub = self.create_publisher(String, '/camara_img', 10)
 
         self.object_detection_string = String()
         
         # Create a timer to publish the Twist message
-        timer_period = 1.0  # seconds
+        timer_period = 4.0  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        
+
 
     def chatter_callback(self, msg: String):
         self.get_logger().info(str(msg))
@@ -33,6 +29,7 @@ class ObjectDetection(Node):
         self.object_detection_string.data = "test"
         self.twist_pub.publish(self.object_detection_string)
         self.get_logger().info(f'Published...')
+
 
 def main(args=None):
     rclpy.init(args=args)

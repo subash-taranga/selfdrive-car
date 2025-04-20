@@ -13,14 +13,14 @@ services:
     stdin_open: true
     # network_mode: "host"
 
-  # microros-serial:
-  #   image: microros/micro-ros-agent:humble
-  #   container_name: microros-serial-container
-  #   tty: true
-  #   privileged: true
-  #   devices:
-  #     - /dev/ttyUSB0:/dev/ttyUSB0
-  #   command: serial --dev /dev/ttyUSB0
+  microros-serial:
+    image: microros/micro-ros-agent:jazzy
+    container_name: microros-serial-container
+    tty: true
+    privileged: true
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    command: serial --dev /dev/ttyUSB0
 
   # microros-udp:
   #   image: microros/micro-ros-agent:humble
